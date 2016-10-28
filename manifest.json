@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "WG-Gesucht +",
+  "version": "0.1.0",
+
+  "description": "More features for the WG-Gesucht.de website. E.g. calculates rent per m².",
+
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.wg-gesucht.de/*"],
+      "js": ["lib/jquery-3.1.1.js", "rentpersqm.js"]
+    }
+  ]
+}
