@@ -6,7 +6,7 @@ More features for the WG-Gesucht.de website. E.g. calculates rent per m².
 
 ## Disclaimer
 
-This extension is not affiliated with WG-Gesucht.de. Use own your own risk.
+This extension is not affiliated with WG-Gesucht.de. Use on your own risk.
 
 ## License
 
