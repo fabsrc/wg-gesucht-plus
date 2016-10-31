@@ -1,4 +1,4 @@
-# WG-Gesucht +
+# WG-Gesucht+
 
 > A *WebExtension* for Mozilla Firefox and Google Chrome.
 
