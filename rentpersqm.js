@@ -16,17 +16,22 @@ window.$('#table-compact-list tr').each(function () {
 })
 
 // Detail View
-var $table = window.$('table.headline-orange')
+var $table = window.$('#main_column > .row').first()
 if ($table.length) {
-  var size = window.$('td:first-child div', $table).text().match(/\d+/g)
-  var rent = window.$('td:nth-child(2) span', $table).text().match(/\d+/g)
+  var $sizeContainer = $table.find('.col-xs-6:nth-child(1)')
+  var size = $sizeContainer.find('.headline').text().match(/\d+/g)
+  $sizeContainer.addClass('col-xs-4').removeClass('col-xs-6')
+  var $rentContainer = $table.find('.col-xs-6:nth-child(2)')
+  var rent = $rentContainer.find('.headline').text().match(/\d+/g)
+  $rentContainer.addClass('col-xs-4').removeClass('col-xs-6')
+
   if (rent && size) {
     var calc = (rent / size).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
     // console.log(calc)
   }
 
-  var $clone = window.$('td:first-child', $table).clone()
-  window.$('span', $clone).text('Miete pro m²')
-  window.$('div', $clone).text(calc + '€')
-  $clone.insertAfter(window.$('td:nth-child(2)', $table))
+  var $clone = $sizeContainer.clone()
+  $clone.find('h1').text(calc + '€')
+  $clone.find('h3').text('Miete pro m²')
+  $clone.insertAfter($rentContainer)
 }
